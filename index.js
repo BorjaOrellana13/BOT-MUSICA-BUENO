@@ -12,7 +12,6 @@ const client = new Client({
   restTimeOffset: 0
 });
 
-
 client.login(TOKEN);
 client.commands = new Collection();
 client.prefix = PREFIX;
@@ -46,13 +45,12 @@ i18n.configure({
   }
 });
 
-
 /**
  * Client Events
  */
 client.on("ready", () => {
   console.log(`${client.user.username} ready!`);
-  client.user.setActivity(`Musica, >help |Total de servers - ${client.guilds.cache.size}`, { type: "LISTENING" });
+  client.user.setActivity(`${PREFIX}help and ${PREFIX}play`, { type: "LISTENING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
